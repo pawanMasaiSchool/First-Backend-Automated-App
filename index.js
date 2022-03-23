@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get("/", (req,res)=>{
     try{
-        res.send({messege:"Homepage"})
+        res.send({messege:"Homepage 2"})
     }
     catch(err){
         res.status(404).send("This Looks Little Wrong")
@@ -18,7 +18,7 @@ app.get("/", (req,res)=>{
 
 app.get("/users", (req,res)=>{
     try{
-        res.status(200).send({messege:"All Users"})
+        res.status(200).send({messege:"All Users 2"})
     }
     catch(err){
         res.status(400).send("This Went Terribly Wrong")
@@ -27,7 +27,7 @@ app.get("/users", (req,res)=>{
 
 app.get("/tweets",(req,res)=>{
     try{
-        res.status(200).send({messege:"All Tweets"})
+        res.status(200).send({messege:"All Tweets 2"})
     }
     catch(err){
         res.status(400).send("This Went Terribly Wrong")
