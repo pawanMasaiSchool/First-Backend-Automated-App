@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 2244;
 const cors = require('cors');
+const userRouter = require('./routes/user.routes');
+const tweetRouter = require('./routes/tweets.routes');
 
 app.use(cors());
 
@@ -16,23 +18,9 @@ app.get("/", (req,res)=>{
     }
 })
 
-app.get("/users", (req,res)=>{
-    try{
-        res.status(200).send({messege:"All Users 2"})
-    }
-    catch(err){
-        res.status(400).send("This Went Terribly Wrong")
-    }
-})
+app.use("/users",userRouter);
+app.use("/tweets",tweetRouter);
 
-app.get("/tweets",(req,res)=>{
-    try{
-        res.status(200).send({messege:"All Tweets 2"})
-    }
-    catch(err){
-        res.status(400).send("This Went Terribly Wrong")
-    }
-})
 
 app.listen(PORT,()=>{
     console.log(`Listening at ${PORT}`);
