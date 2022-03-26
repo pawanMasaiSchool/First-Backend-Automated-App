@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get("/", (req,res)=>{
     try{
-        res.send({messege:"Homepage 2"})
+        res.send({messege:"Homepage Hello World"})
     }
     catch(err){
         res.status(404).send("This Looks Little Wrong")
